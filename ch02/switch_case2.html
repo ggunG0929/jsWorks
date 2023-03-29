@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>switch~case문2</title>
+        <style>
+            body{
+                background-color: rgb(23, 23, 108);
+                color: #e3e3e3;
+                text-align: center;
+                margin-top: 50px;
+            }
+            p{
+                text-shadow: 2px 1px 2px #222;
+                font-size: 2em;
+            }
+            /* 선생님은 strong 태그이용 */
+            p .accent{
+                color: yellow;
+                font-size: 1.5em; /* p의 1.5배 */
+                font-weight: bold;
+            }
+        </style>
+        <script>
+            // 1-마케팅 2-개발 3-디자인
+            let session = prompt("관심 세션을 선택해 주세요.","1-마케팅, 2-개발, 3-디자인");
+
+            switch(session){ // 입력받은 숫자를 문자형태로 기록
+                case '1': 
+                    document.write("<p>마케팅 세션은 <span class='accent'>201호</span>에서 진행됩니다.</p>");
+                    break;
+                case '2': 
+                    document.write("<p>개발 세션은 <span class='accent'>202호</span>에서 진행됩니다.</p>");
+                    break;
+                case '3': 
+                    document.write("<p>디자인 세션은 <span class='accent'>203호</span>에서 진행됩니다.</p>");
+                    break;
+                default: 
+                    document.write("<p>진행되는 세션이 없습니다.</p>");
+                    break;
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>switch~case문</title>
+        <script>
+            // 1위-금메달, 2위-은메달, 3위-동메달, 기본-메달x
+            let rank = 2;
+
+            // switch문
+            switch(rank){ // switch(변수){case 변수값: break}
+                case 1:
+                    document.write("금메달"); break;
+                case 2:
+                    document.write("은메달"); break;
+                case 3:
+                    document.write("동메달"); break;
+                default:
+                    document.write("노메달"); break;
+            }
+
+            // if문으로 변경
+            let medal;
+            if(rank === 1){medal = "금";
+            }else if(rank === 2){medal = "은";
+            }else if(rank === 3){medal = "동";
+            }else{medal = "노";
+            }
+            document.write("<br>" + medal + "메달");
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
