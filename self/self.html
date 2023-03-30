@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="kor">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>연습</title>
+        <style>
+            body{
+                text-align: center;
+            }
+            table, td{
+                border: 1px solid #ccc;
+                border-collapse: collapse;
+                padding: 10px;
+                margin: 0 auto;
+            }
+            div{
+                border: 1px solid #ccc;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>구구단</h2>
+        <script>
+            /* 
+            // 원래 구구단
+            for(let i=2;i<=9;i++){ //dan
+                document.write(i + "단<br>")
+                for(var j=1;j<=9;j++){
+                    document.write(i + "X" + j + "=" + (i*j) + "<br>");
+                }
+                document.write("<br>");
+            }
+            */ 
+
+            /* 
+            // 구구단 배치바꾸기, 값이 한자리 두자리 섞여있으니 통일시키기
+            for(let i=1;i<=9;i++){
+                for(var j=2;j<=9;j++){
+                    if(i===1){ // 처음에 i=1로 다시 지정하면서 오류, 부등호표시는 두번!!
+                        document.write(j + "X" + i + "=0" + (j*i) + " ");
+                    }else if(i===2 && j<5){
+                        document.write(j + "X" + i + "=0" + (j*i) + " ");
+                    }else if(i===3 && j<4){
+                        document.write(j + "X" + i + "=0" + (j*i) + " ");
+                    }else if(i===4 && j<3){
+                        document.write(j + "X" + i + "=0" + (j*i) + " ");
+                    }else if(i===5 && j<2){
+                        document.write(j + "X" + i + "=0" + (j*i) + " ");
+                    }else{
+                        document.write(j + "X" + i + "=" + (j*i) + " ");
+                        }
+                    }
+                document.write("<br>");
+            }
+            */
+           
+            /* 
+            // 조건식 더 간단하게
+            for(let i=1;i<=9;i++){
+                for(var j=2;j<=9;j++){
+                    if(j*i<10){
+                        document.write(j + "X" + i + "=0" + (j*i) + " ");
+                    }else{
+                        document.write(j + "X" + i + "=" + (j*i) + " ");
+                        }
+                    }
+                document.write("<br>");
+            }
+            */
+
+            /*
+            //table에 넣으면서 자리수 통일시킬 이유 x
+            document.write("<table>")
+            for(let i=1;i<=9;i++){
+                document.write("<tr>")
+                for(var j=2;j<=9;j++){
+                    document.write("<td>" + j + "X" + i + "=" + (j*i) + " </td>");
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>")
+            */
+
+            // div에 넣어서 박스로 묶기
+            document.write("<div>")
+            for(let i=1;i<=9;i++){
+                for(var j=2;j<=9;j++){
+                    if(j*i<10){
+                        document.write(j + "X" + i + "=0" + (j*i) + " ");
+                    }else{
+                        document.write(j + "X" + i + "=" + (j*i) + " ");
+                        }
+                    }
+                document.write("<br>");
+            }
+            document.write("</div>")
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>함수5</title>
+        <style>
+            body{
+                margin-top: 30px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="myAbs(-5)">계산하기</button>
+        <p id="show"></p>
+        <script>
+            let myAbs = function(x){ // x>0, x<0 두가지의 경우
+                if(x<0){ 
+                    document.getElementById("show").innerHTML = -x;
+                }else{
+                    document.getElementById("show").innerHTML = x;
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="kor">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>3의 배수 계산하기</title>
+        <script>
+           /*
+           // 1부터 30까지의 3의 배수 구하기
+            // for~if문
+            for(var i=1; i<=30; i++){
+                if(i % 3 === 0){
+                    document.write(i + "<br>");
+                }
+            }
+
+            // 1~30까지의 3의 배수 개수 구하기
+            let count = 0;
+            for(var i=1; i<=30; i++){
+                // 이 위치에서 count를 정의해주면 마지막에 결과값이 없어짐 바깥에서 정의해주기
+                if(i % 3 === 0){
+                    count++;
+                }
+            }
+            document.write("개수: " + count)
+            */
+
+            // continue문 사용
+            for(var i=1; i<=30; i++){
+                if(i % 3 !== 0){
+                    continue;
+                }
+                document.write(i + "<br>");
+            }
+        </script>
+    </head>
+    <body>  
+    </body>
+</html>

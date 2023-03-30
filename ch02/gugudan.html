@@ -4,17 +4,39 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>구구단</title>
+        <title>구구단2</title>
+        <style>
+            body{
+                text-align: center;
+            }
+            h2{
+                letter-spacing: 10px;
+            }
+            div{
+                display: inline-block;
+                border: 1px solid #ccc;
+                padding: 10px 30px;
+                margin: 10px;
+                line-height: 2;
+            }
+            p{
+                color: green;
+            }
+            span{
+                color: blue;
+            }
+        </style>
     </head>
     <body>
         <h2>구구단</h2>
         <script>
             for(let i=2;i<=9;i++){ //dan
-                document.write(i + "단<br>")
+                document.write("<div>")
+                document.write("<p>[ "+i+"단 ]<br></p>")
                 for(var j=1;j<=9;j++){
-                    document.write(i + "X" + j + "=" + (i*j) + "<br>");
+                    document.write(i + "X" + j + "=<span>" + (i*j) + "</span><br>");
                 }
-                document.write("<br>");
+                document.write("</div>");
             }
         </script>
     </body>

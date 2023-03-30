@@ -1,0 +1,37 @@
+.menu{
+    width: 400px;
+    margin: 10px 20px 10px 50px;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+    width: 65px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+ul li a:hover{
+    font-weight: bold;
+}
+ul li #green:hover{
+    color: green;
+}
+ul li #black:hover{
+    color: black;
+}
+ul li #pink:hover{
+    color: pink;
+}
+.box{
+    width: 400px;
+    height: 300px;
+    border: 1px solid #ccc;
+    margin-left: 50px;
+    border-radius: 5px;
+}
