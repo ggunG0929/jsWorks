@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Math객체</title>
+        <script>
+            // 1~10 자연수 중 무작위 수
+            // 0<=Math.random()<=1
+            let rand = Math.floor(Math.random()*10+1);
+            console.log(rand);
+
+            // 주사위 만들기
+            let dice = Math.floor(Math.random()*6+1);
+            console.log(dice);
+
+            // 주사위 10번 던지기
+            for(var i=0;i<10;i++){
+                let dice2 = Math.floor(Math.random()*6+1); // 그냥 dice로 넣으면 같은 숫자로 10번 돌아감 자체적으로 안에서 새로 지정해서 돌려야함.
+                console.log(dice2);
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

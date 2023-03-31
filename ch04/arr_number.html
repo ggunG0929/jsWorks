@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>배열의 사용</title>
+        <script>
+            // 배열의 크기 생성
+            // 1~10까지 자연수 저장
+            let arrNum = new Array(10); // Array를 array로 치면 안됨
+            console.log(arrNum.length);
+            console.log(arrNum);
+            
+            // 저장
+            /*
+            arrNum[0] = 1;
+            arrNum[1] = 2;
+            arrNum[2] = 3;
+            arrNum[3] = 4; 
+            ...
+            */
+            for(var i=0;i<arrNum.length;i++) // 한줄들어간 태그 중괄호는 생략가능
+                arrNum[i] = i +1;
+            console.log(arrNum);
+
+            // 조회1(출력) - 배열의 크기
+            for(var i=0;i<arrNum.length;i++)
+                document.write(arrNum[i]+" ")
+
+            document.write("<br>")
+            // 조회2 - for(반복변수 in 배열이름){}
+            for(var i in arrNum)
+                document.write(arrNum[i]+" ")
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

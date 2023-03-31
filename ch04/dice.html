@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>주사위 던지기 게임</title>
+        <script>
+            // 주사위 2개를 10번 던지기
+            for(var i=0;i<10;i++){
+                let dice1 = Math.floor(Math.random()*6+1);
+                let dice2 = Math.floor(Math.random()*6+1);
+                // 선생님은 total값을 따로 정리, 콘솔에도 total값을 출력
+                console.log(dice1+" : "+dice2);
+                if(dice1+dice2===8){
+                    console.log("Eight Thrown!");
+                }if(dice1+dice2===11){
+                    console.log("Eleven Thrown!");
+                    // 처음엔 else if로 했으나 4-4일때 더블이라고 안 떠서 if로 수정
+                }if(dice1 === dice2){
+                    console.log("Double Thrown!");
+                }
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>자바스크립트2</title>
+    </head>
+    <body>
+        <script>
+            // return이 있는 함수
+            // 매개 변수 1개(1이 더해지는 함수)
+            function oneUp(x){
+                // x = x + 1; // 이대로 쓴다면 아랫줄 리턴은 엑스만
+                return x+1;
+            }
+
+            // document.write(oneUp(10)); // 아래와 같은 결과
+            let num = oneUp(10);
+            document.write(num);
+
+            document.write("<br>")
+            // 절대값
+            document.write(Math.abs(-11)); //절대값연산방법1
+
+            document.write("<br>")
+            function myAbs(x){ // 절대값연산방법2
+                if(x>0){
+                    return x;
+                }else{
+                    return -x;
+                }
+            }
+            document.write(myAbs(-11));
+
+
+            document.write("<hr>")
+            // 매개변수2개
+            function subNumber(x,y){
+                let result = x - y;
+                return result // result 값을 반환하고 소멸. 그래서 밑에서 result를 다시 지정해도 됨
+            }
+            document.write(subNumber(4,7)); // 출력1
+
+            document.write("<br>")
+            let result = subNumber(4,7); // 출력2
+            document.write(result);
+        </script>
+    </body>
+</html>

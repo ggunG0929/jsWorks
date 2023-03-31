@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Date 객체</title>
+    </head>
+    <body>
+        <h2>Date 객체</h2>
+        <p>현재 날짜와 시간 표시</p>
+        <p id="demo"></p>
+        
+        <p>특정한 날짜와 시간</p>
+        <p id="display"></p>
+        <script>
+            // 현재 날짜 생성(운영체제 시스템의 날짜)
+            const date = new Date();
+            /*
+            console.log(date);
+            console.log(date.toLocaleString()); 콘솔로 확인
+            */
+            document.getElementById("demo").innerHTML = date.toLocaleString();
+            
+            // 특정한 날짜
+            const date2 = new Date("2023,3,16");
+            document.getElementById("display").innerHTML = date2.toLocaleString();
+
+            // 날짜
+            document.write("현재 년도: " + date.getFullYear() + "<br>");
+            document.write("현재 월: " + (date.getMonth()+1) + "<br>");
+            document.write("현재 일: " + date.getDate() + "<br>");
+
+            // 시간
+            document.write("현재 시: " + date.getHours() + "<br>");
+            document.write("현재 분: " + date.getMinutes() + "<br>");
+            document.write("현재 초: " + date.getSeconds() + "<br>");
+
+            // 1970년 1월 1일부터 현재까지의 시간
+            document.write("현재까지: " + date.getTime()/1000 + "<br>"); // 초단위. 원래는 밀리초단위여서 /1000
+        </script>     
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>return 연습 문제</title>
+    </head>
+    <body>
+        <script>
+            function fnComplex(x,y){
+                let result;
+                if(x===y){
+                    result = x * y;
+                }else{
+                    result = x + y;
+                }
+                return result;
+            }
+            /*
+            // 선생님은 따로 result정의 안하고 바로 리턴 연산으로 처리
+            function fnComplex(x,y){
+                let result;
+                if(x===y){
+                    return x * y;
+                }else{
+                    resturn x + y;
+                }
+            }
+            */
+            let num1 = fnComplex(10,10);
+            let num2 = fnComplex(5,10);
+            document.write("num1 = "+num1+"<br>")
+            document.write("num2 = "+num2)    
+        </script>
+    </body>
+</html>
