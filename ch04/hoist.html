@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>호이스트(hoist)</title>
+    </head>
+    <body>
+        <script>
+            // 순서가 바꼈음에도 인정해주는 자바스크립트의 특성
+            console.log(a);
+            var a = 1;
+
+            // let은 오류발생(런타임오류)
+            console.log(a);
+            let a = 1;
+        </script>
+    </body>
+</html>

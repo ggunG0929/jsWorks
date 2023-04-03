@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>배열의 객체 함수 연습문제</title>
+    </head>
+    <body>
+        <script>
+            let odd = new Array(5)
+            let sumV =0; // 초기값 0 설정해줘야 함
+            for (var i=0;i<odd.length;i++){
+                odd[i] = 2*i+1;
+                sumV += odd[i];
+            }
+            odd.push(sumV);
+            document.write(odd);
+            
+            /*
+            // 선생님 답
+            let odd = [1,3,5,7,9]
+            for(let i=0;i<odd.length;i++){
+                sumV += odd[i];
+            }
+            odd.push(sumV);
+
+            // odd를 활용해서 출력
+            for(let i=0;i<odd.length;i++){
+                document.write(odd[i]+" ");
+            }
+
+            // for~in 출력
+            for(let i in odd){
+                document.write(odd[i]+" ")
+            }
+            */
+        </script>
+    </body>
+</html>

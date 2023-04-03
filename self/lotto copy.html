@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>로또(lotto) 추첨 프로그램</title>
+        <style>
+            section{
+                width: 800px;
+                margin: 0 auto;
+                text-align: center;
+            }
+            h1{
+                width: 200px;
+                border: 1px solid #ccc;
+                background-color: #eee;
+                text-align: center;
+                padding: 10px;
+                cursor: pointer;
+            }
+            #num{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <h1 onclick="see()">로또 추첨 번호</h1>
+            <div id="num"></div>
+        </section>
+        <script>
+                // document.write("<p>번호: ");
+                let winner = new Array(6)
+                for(let i=0;i<winner.length;i++){
+                    let lotto = Math.ceil(Math.random()*45);
+                    winner[i] = lotto;
+
+                    for(let j=0;j<i;j++){
+                        if(winner[j]===winner[i]){
+                            i--;
+                        }
+                    }
+                }
+                function see(){
+                    let list = document.getElementById("num");
+                    for(/* let i=0; i<winner.length;i++ */ let i in winner){
+                        list.innerHTML = winner;
+                    /* if(i===winner.length-1){
+                        list.innerHTML = winner[i];
+                            
+                            // document.getElementById("num").innerHTML = winner[i]+"</p>";}
+                        // document.write(winner[i]+"</p>");
+                    }else{
+                        list.innerHTML = winner[i];
+                        // document.write(winner[i]+", ");
+                    } */
+                }
+                }
+        </script>
+    </body>
+</html>

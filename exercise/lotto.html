@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>로또(lotto) 추첨 프로그램</title>
+        <style>
+            h1{
+                width: 200px;
+                border: 1px solid #ccc;
+                background-color: #eee;
+                text-align: center;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <h1>로또 추첨 번호</h1>
+        </section>
+        <script>
+            document.write("<p>번호: ");
+            let winner = new Array(6)
+            for(let i=0;i<winner.length;i++){
+                let lotto = Math.ceil(Math.random()*45);
+                winner[i] = lotto;
+                console.log(lotto);
+                for(let j=0;j<i;j++){
+                    if(winner[j]===winner[i]){
+                        console.log("중복숫자: "+winner[j])
+                        i--;
+                    }
+                }
+            }
+            for(let i=0; i<winner.length;i++){
+                if(i===winner.length-1){
+                document.write(winner[i]+"</p>");
+                }else{
+                document.write(winner[i]+", ");
+                }
+            }
+        </script>
+    </body>
+</html>

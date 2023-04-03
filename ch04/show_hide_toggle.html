@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>버튼 토글 기능</title>
+        <style>
+            button{
+                margin: 10px;
+            }
+            #pic{
+                /* block으로 초기설정하면 설정값이 안 나타남.. 그래서 초기에는 버튼을 두번 눌러야함 */
+                display: none; 
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="showHide()" id="btnText">보이기</button>
+        <div>
+            <img src="./images/flower1.jpg" alt="꽃" id="pic">
+        </div>
+        <script>
+            // let sw=0; 상태 변수로도 가능
+            function showHide(){
+                let img = document.getElementById("pic")
+                let btnText = document.getElementById("btnText")
+                if(img.style.display === "block"){
+                    img.style.display = "none";
+                    btnText.innerText = "보이기";
+                    // sw=0;
+                }else{
+                    img.style.display = "block";
+                    btnText.innerText = "숨기기";
+                    // sw=1;
+                }
+            }
+        </script>
+    </body>
+</html>

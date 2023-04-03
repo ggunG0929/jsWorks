@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>날짜 계산 프로그램</title>
+        <style>
+            #container{
+                width: 300px;
+                height: 300px;
+                border: 1px solid blue;
+                border-radius: 50%;
+                text-align: center;
+                margin: 50px auto;
+                background-color: aliceblue;
+                position: relative;
+            }
+            h2{
+                position: absolute;
+                left: 65px;
+                top: 75px;
+            }
+            p{
+                position: absolute;
+                left: 35px;
+                top: 150px;
+            }
+            #day{
+                color: red;
+                font-weight: bold;
+                font-size: 1.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <h2>지금까지 몇 일?</h2>
+            <p>1월 1일 이후 <span id="day"></span>일 지났습니다.</p>
+        </div>
+        <script src="./js/passed_time.js"></script>
+    </body>
+</html>
