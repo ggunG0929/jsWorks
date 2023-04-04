@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>클릭해서 이미지 바꾸기</title>
+    </head>
+    <body>
+        <img src="./images/cup-1.png" alt="컵" id="pic">
+        <button onclick="changePic()">시작</button>
+        <button onclick="stop()">중지</button>
+        <script>
+            // 객체.src="파일의 위치(경로)"
+            let pic = document.getElementById("pic");
+            // 임의로 토글, 인터벌로 이미지 바뀌게 변경
+            // 이미지 바뀌는 것 정지하는 버튼
+            let j=0;
+            function changePic(){
+                let id = setInterval(changer,1000);
+                function changer(){
+                    if(j===0){
+                        pic.src="./images/cup-2.png";
+                        j=1;
+                    }else if(j===1){
+                        pic.src="./images/cup-1.png";
+                        j=0;
+                    }else{
+                        clearInterval(id);
+                    }
+                }
+                j=0;
+            }
+            function stop(){
+                return j=3;
+            }
+        </script>
+    </body>
+</html>

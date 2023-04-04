@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>로또(lotto) 추첨 프로그램2</title>
+        <style>
+            h1{
+                width: 200px;
+                border: 1px solid #ccc;
+                background-color: #eee;
+                text-align: center;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <h1>행운의 추첨</h1>
+        </section>
+        <script>
+            // 선생님은 숫자로 연산 후 출력시에만 document.write(name[people[i]])로 변환
+            let name = ["성호","은효","민정","지혜","승우","가은","은별","기용"];
+            let winner = new Array(3)
+            for(let i=0;i<winner.length;i++){
+                let lotto = Math.floor(Math.random()*(name.length));
+                winner[i] = name[lotto]; // 선생님과의 차이
+                console.log(winner[i]);
+                for(let j=0;j<i;j++){
+                    if(winner[j]===winner[i]){
+                        console.log("중복당첨: "+winner[j])
+                        i--;
+                    }
+                }
+            }
+            document.write("당첨자: ")
+            for(let i=0; i<winner.length;i++){
+                if(i===winner.length-1){
+                document.write(winner[i]+"</p>");
+                }else{
+                document.write(winner[i]+", ");
+                }
+            }
+        </script>
+    </body>
+</html>

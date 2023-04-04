@@ -10,6 +10,7 @@
                 width: 800px;
                 margin: 0 auto;
                 text-align: center;
+                position: relative;
             }
             h1{
                 width: 200px;
@@ -18,9 +19,14 @@
                 text-align: center;
                 padding: 10px;
                 cursor: pointer;
+                position: absolute;
+                left: 300px;
             }
             #num{
                 text-align: center;
+                position: absolute;
+                top: 100px;
+                left: 325px;
             }
         </style>
     </head>
@@ -30,33 +36,24 @@
             <div id="num"></div>
         </section>
         <script>
-                // document.write("<p>번호: ");
+            // 로또 추첨 번호 영역을 누를 때마다 추첨
+            function see(){
                 let winner = new Array(6)
                 for(let i=0;i<winner.length;i++){
                     let lotto = Math.ceil(Math.random()*45);
                     winner[i] = lotto;
-
                     for(let j=0;j<i;j++){
                         if(winner[j]===winner[i]){
+                            console.log(winner[i])
                             i--;
                         }
                     }
                 }
-                function see(){
-                    let list = document.getElementById("num");
-                    for(/* let i=0; i<winner.length;i++ */ let i in winner){
-                        list.innerHTML = winner;
-                    /* if(i===winner.length-1){
-                        list.innerHTML = winner[i];
-                            
-                            // document.getElementById("num").innerHTML = winner[i]+"</p>";}
-                        // document.write(winner[i]+"</p>");
-                    }else{
-                        list.innerHTML = winner[i];
-                        // document.write(winner[i]+", ");
-                    } */
+                let list = document.getElementById("num");
+                for(let i in winner){
+                    list.innerHTML = "<p>번호: " + winner + "</p>";
                 }
-                }
+            }
         </script>
     </body>
 </html>

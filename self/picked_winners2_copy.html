@@ -12,12 +12,16 @@
                 text-align: center;
             }
             h1{
-                display: inline-block;
                 border: 1px solid #ccc;
                 padding: 10px 20px;
                 background-color: #eee;
             }
+            div{
+                width: 800px;
+                height: 400px;
+            }
             p{
+                width: 100%;
                 text-align: center;
             }
         </style>
@@ -25,45 +29,36 @@
     <body>
         <section>
             <h1>당첨자 발표2</h1>
+            <!-- 버튼을 누르면 이벤트 시작, show에서 뜨도록 -->
             <button onclick="click()">결과</button>
-            <span id = "show"></span>
+            <div id="show"></div>
         </section>
         <script>
             let member = 24;
             // let member = parseInt(prompt("전체 응모자 수"));
             let num = 7;
             // let num = parseInt(prompt("당첨자 수"));
-            // let winners = new Array(winner);
+            // let winners = new Array(num);
+            let winners = new Array(num);
             function click(){
-
-            }
-            if(member===null||isNaN(member)||num===null||isNaN(num)){
-                document.write("<p>입력이 취소되었습니다.</p>");
-            }else{
-                let winners = new Array(num);
-                document.write("<p>전체 응모자수: "+member+"명</p><br>");
-                document.write("<p>당첨자: ");
-                    // 배열에 저장
+                document.write("전체 응모자수: ")
+                // let list = document.getElementById("show");
+                // list.innerHTML = "전체 응모자수: ";
+/*
                 for(let i=0;i<winners.length;i++){
                     let pickedOne = Math.floor(Math.random()*member+1);
-                    winners[i] = pickedOne; // 당첨된 1개 번호를 배열에 저장
-                    // 중복 제거
+                    winners[i] = pickedOne;
                     for(let j=0;j<i;j++){
-                        if(winners[j] === winners[i]){ // 중복인 경우 이전 인덱스로 돌아감
-                            console.log(winners[i]); // 임의로 중복선택된 번호와 횟수를 콘솔에서 확인
+                        if(winners[j] === winners[i]){
+                            console.log(winners[i]);
                             i--;
                         }
                     }
-
                 }
-                //당첨자번호 마지막에는 콤마빼기
                 for(let i=0; i<winners.length;i++){
-                    if(i===winners.length-1){
-                    document.write(winners[i]+"번</p>");
-                    }else{
-                    document.write(winners[i]+"번, ");
-                    }
+                    show.innerHTML = winners;
                 }
+                */
             }
         </script>
     </body>
