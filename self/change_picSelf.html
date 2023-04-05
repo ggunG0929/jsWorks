@@ -15,24 +15,24 @@
             let pic = document.getElementById("pic");
             // 임의로 토글, 인터벌로 이미지 바뀌게 변경
             // 이미지 바뀌는 것 정지하는 버튼
+            // 셋인터벌과 펑션을 if 조건문 안에서 만드니까 다른 조건에서 클리어인터벌을 넣으니 펑션이 존재하지 않는다고 에러가 뜸. 분리하거나 맨위로 빼서 전역함수로 만들어주기.
             let j=0;
+            let itv;
             function changePic(){
-                let id = setInterval(changer,1000);
+                itv = setInterval(changer,1000);
                 function changer(){
                     if(j===0){
                         pic.src="./images/cup-2.png";
                         j=1;
-                    }else if(j===1){
+                    }else{
                         pic.src="./images/cup-1.png";
                         j=0;
-                    }else{
-                        clearInterval(id);
                     }
                 }
-                j=0;
             }
             function stop(){
-                return j=3;
+                clearInterval(itv);
+                j=0;
             }
         </script>
     </body>

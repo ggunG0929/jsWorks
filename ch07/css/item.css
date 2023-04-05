@@ -1,0 +1,46 @@
+#wrapper{
+    width: 600px;
+    margin: 50px auto;
+}
+h2{
+    text-align: center;
+}
+/* 폼 스타일 */
+form{
+    text-align: center;
+    background-color: #0094ff;
+    padding: 30px;
+}
+input{
+    width: 420px;
+    padding: 10px;
+}
+.btnAdd{
+    width: 60px;
+    padding: 8.5px;
+}
+/* 목록 스타일 */
+ul{
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    list-style: none;
+    padding: 10px 10px 10px 40px;
+    background: #eee;
+    position: relative;
+}
+ul li:hover{
+    background-color: #ddd;
+}
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+}
+.close:hover{
+    background-color: rgb(30,100,200);
+    color: #fff;
+    cursor: pointer;
+}
