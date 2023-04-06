@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="kor">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,18 +12,18 @@
             <li>Tea</li>
         </ul>
         <!-- this.onclick : 자기 자신을 클릭했을 때 호출할 함수 없음 1번만 적용 -->
-        <button onclick="myFunction(); this.onclick=''">실행</button>
+        <button onclick="myFunction();this.onclick=''">실행</button>
         <script>
             // 노드 추가 함수 - createElement()
             function myFunction(){
                 let newLi = document.createElement("li");
                 let textNode = document.createTextNode("Water");
-                newLi.appendChild(textNode); // li에 Water를 연결(추가)
-                // <li>Water</li>
+                newLi.appendChild(textNode); // li에 Water를 연결(추가) <li>Water</li>
                 // <ul>안에 포함시키기
+                // ducument.getElementById("myList").appendChild(newLi);
                 let list = document.getElementById("myList");
                 // list.appendChild(newLi); // 맨 아래 추가
-                list.insertBefore(newLi,list.childNodes[0]); // 특정 위치에 추가 2번 앞에 추가(?)
+                list.insertBefore(newLi,list.childNodes[2]); // 특정 위치에 추가 2번 앞에 추가(?) : childNodes로 뽑아보면 li랑 엔터인 text가 모두 배열에 들어있음 children일 때는 li만 들어가서 보여질 때  children은 생각했던대로 들어가고 childNodes는 0,1 앞에 넣었을때 똑같이 보임.
             }
         </script>
     </body>

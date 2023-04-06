@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM에서 노드 추가하기</title>
+        <script>
+            // 입력값 nan처리
+            function printGugu(){
+                let x = document.getElementById("myNum").value;
+                let px = parseInt(x);
+                document.getElementById("x").innerHTML= " "+px+"단";
+                for(var i=1;i<10;i++){
+                    let newP = document.createElement("p");
+                    let print = document.createTextNode(px+"X"+i+"= "+(px*i));
+                    newP.appendChild(print);
+                    document.getElementById("demo").appendChild(newP);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>구구단<span id="x"></span></h1>
+        <p>몇 단을 출력할까요?</p>
+        <input type="text" id="myNum">
+        <button onclick="printGugu();this.onclick=''">OK</button>
+        <div id="demo"></div>
+    </body>
+</html>

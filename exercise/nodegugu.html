@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM에서 노드 추가하기</title>
+        <script>
+            function printGugu(){
+                let x = document.getElementById("myNum").value;
+                let px = parseInt(x); // 입력값 처리
+                document.getElementById("x").innerHTML= " "+px; // 단수 표시
+                for(var i=1;i<10;i++){
+                    let newD = document.createElement("div"); // 태그 추가
+                    let print = document.createTextNode(px+"X"+i+"= "+(px*i)); // 텍스트 추가
+                    newD.appendChild(print); // div에 텍스트 내용 추가
+                    document.getElementById("demo").appendChild(newD); // 보여질 영역에 텍스트를 가진 div를 추가
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>구구단<span id="x"> X</span>단</h1>
+        <p>단 입력: </p>
+        <input type="text" id="myNum">
+        <button onclick="printGugu();this.onclick=''">OK</button>
+        <div id="demo"></div>
+    </body>
+</html>

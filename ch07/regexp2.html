@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>정규 표현식</title>
+    </head>
+    <body>
+        <p>RegExp 객체 사용 - text() 함수 사용</p>
+        <script>
+            // 문자열 일치하는지 체크
+            // RegExp(정규표현식
+            // pattern 객체 생성)
+            let pattern = new RegExp(/H/); // true
+            // let pattern = new RegExp(/h/i); // true
+            // let pattern = new RegExp('h'); // false
+            let pattern2 = /hello/i;
+            
+            let str = "Hello~ My Site!";
+            let match = pattern.test(str);
+            // let match = pattern.test("Hello~ My Site!");
+            let match2 = pattern2.test("Hello~ My Site!");
+
+            // document.write(match+"<br>");            
+            // document.write(match2+"<br>")
+
+            // 아이디 글자수 체크
+            // ^ -정규식을 시작, $ - 정규식을 끝냄
+            // '+' 문자 반복
+            // let regEx=/^[A-Z]+$/
+            let regEx=/^[a-z0-9A-Z]{5}$/
+            id = "ab12cde";
+            let mat = regEx.test(id);
+            document.write(mat);
+        </script>
+    </body>
+</html>
