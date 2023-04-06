@@ -5,7 +5,34 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>선택한 옵션 항목 찾아내기</title>
-        <link rel="stylesheet" href="./css/major.css">
+        <style>
+            #container{
+            width: 500px;
+            margin: 10px auto;
+            }
+            form fieldset{
+                margin-bottom: 25px;
+            }
+            form legend{
+                font-size: 15px;
+                font-weight: 700;
+                margin-left: 10px;
+            }
+            form ul li{
+                list-style: none;
+                margin: 15px 0;
+                font-size: 14px;
+            }
+            label.reg{
+                width: 80px;
+                float: left; 
+                text-align: right;
+                margin-right: 10px;
+                font-size: 15px;
+                color: #390;
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body>
         <!-- node1을 참조해서 value 영어일때 한글을 선택할 수 있지않을까? -->
@@ -23,11 +50,11 @@
                             <label class="reg" for="class">학과</label>
                             <select name="major" id="major" name="major" onchange="displaySelect()">
                                 <option>---- 학과 선택 ----</option>
-                                <option value="건축학과">건축학과</option>
-                                <option value="기계공학과">기계공학과</option>
-                                <option value="전기전자공학과">전기전자공학과</option>
-                                <option value="컴퓨터공학과">컴퓨터공학과</option>
-                                <option value="화학공학과">화학공학과</option>
+                                <option value="archi">건축학과</option>
+                                <option value="mechanic">기계공학과</option>
+                                <option value="elect">전기전자공학과</option>
+                                <option value="computer">컴퓨터공학과</option>
+                                <option value="chemical">화학공학과</option>
                             </select>
                         </li>
                     </ul>
@@ -48,6 +75,11 @@
                 </fieldset>
             </form>
         </div>
-        <script src="./js/major.js"></script>
+        <script>
+            function displaySelect(){
+                let selectedText = document.getElementById("major").value;
+                alert(selectedText + "가 선택되었습니다.");
+            }
+        </script>
     </body>
 </html>

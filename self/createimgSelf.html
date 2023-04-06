@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM에서 이미지 태그(노드) 추가하기</title>
+        <style>
+            #wrap{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <h1>커피의 세계</h1>
+            <a href="#" onclick="toggleBtn()" id="btn">더보기</a>
+            <div id="info"></div>
+        </div>
+        <script> 
+            // 토글 만들어보기
+            function addContents(){
+                let newP = document.createElement("p");
+                let text = document.createTextNode("은은하고 다채로운 꽃향") // 텍스트내용추가
+                newP.appendChild(text);
+                let spot = document.getElementById("info");
+                spot.appendChild(newP);
+                let newImg = document.createElement("img");
+                let src = document.createAttribute("src");
+                src.value = "./images/coffee-blue.jpg";
+                newImg.setAttributeNode(src);
+                // alt 속성
+                let alt = document.createAttribute("alt");
+                alt.value = "커피 이미지";
+                newImg.setAttributeNode(alt);
+                spot.appendChild(newImg);
+            }
+
+            // function delContents(){ // 내용삭제하는 함수 생각해보기
+            // }
+            /*  // 지우는 것이 아니라 디스플레이만 변경하기 때문에 더보기를 누를 때 마다 그림과 텍스트가 추가됨..
+            let state=true;
+            function toggleBtn(){
+                if(state){
+                    addContents();
+                    document.getElementById("info").style.display = "block";
+                    document.getElementById("btn").innerText = "그만보기";
+                    state=false;
+                }else{
+                    document.getElementById("info").style.display = "none";
+                    document.getElementById("btn").innerText = "더보기";
+                    state=true;
+                }
+            }
+            */
+            let state=true;
+            function toggleBtn(){
+                let info = document.getElementById("info");
+                if(state){
+                    if(!info.hasChildNodes()){ // 중복생성방지
+                        addContents();
+                        }
+                    info.style.display = "block";
+                    document.getElementById("btn").innerText = "그만보기";
+                    state=false;
+                }else{
+                    info.style.display = "none";
+                    document.getElementById("btn").innerText = "더보기";
+                    state=true;
+                }
+            }
+        </script>
+    </body>
+</html>

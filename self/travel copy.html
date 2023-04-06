@@ -5,7 +5,54 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>여행 준비물 점검 목록</title>
-        <link rel="stylesheet" href="./css/item copy.css">
+        <style>
+            #wrapper{
+                width: 600px;
+                margin: 50px auto;
+            }
+            h2{
+                text-align: center;
+            }
+            /* 폼 스타일 */
+            form{
+                text-align: center;
+                background-color: #0094ff;
+                padding: 30px;
+            }
+            input{
+                width: 420px;
+                padding: 10px;
+            }
+            .btnAdd{
+                width: 60px;
+                padding: 8.5px;
+            }
+            /* 목록 스타일 */
+            ul{
+                margin: 0;
+                padding: 0;
+            }
+            ul li{
+                list-style: none;
+                padding: 10px 10px 10px 40px;
+                background: #eee;
+                position: relative;
+            }
+            ul li:hover{
+                background-color: #ddd;
+            }
+            .close{
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 10px 20px;
+            }
+            .close:hover{
+                background-color: rgb(30,100,200);
+                color: #fff;
+                cursor: pointer;
+            }
+        </style>
     </head>
     <body>
         <div id="wrapper">
@@ -16,6 +63,55 @@
             </form>
             <div id="itemList"></div>
         </div>
-        <script src="./js/travel copy.js"></script>        
+        <script>
+            // 아이템 리스트
+            let itemList = []
+            /*
+            // 엔터키를 눌렀을때 동시이벤트
+            let input = document.querySelector('#item');
+            input.addEventListener('keyup',function(e){ //keyup: 키를 눌렀을때
+                if (e.keyCode === 13) { // 키코드13인 엔터키 와 일치했을때 ; 요즘에는 코드해서 "Enter"
+                addList();
+                return false; //안됨
+            }
+            });
+            */
+            let addBtn = document.getElementById("add");
+            addBtn.addEventListener("click",addList);
+            // 아이템 추가함수
+            function addList(){
+                // item은 itemList에 push()로 저장(입력)
+                let item = document.getElementById("item").value;
+                itemList.push(item);
+                showList();
+                document.getElementById("item").value = "";
+                document.getElementById("item").focus();
+            }
+            function showList(){
+                // document.getElementById("itemList").innerHTML = itemList[0];
+                let list = "<ul>"; // 목록 리스트 변수
+                for(let i=0;i<itemList.length;i++){
+                    // 아이템 배열 출력
+                    // document.getElementById("itemList").innerHTML = itemList[i];
+                    list += "<li>"+itemList[i]+"<span class='close' id="+i+">X</span></li>";
+                }
+                list += "</ul>"
+                document.getElementById("itemList").innerHTML = list;//아이템리스트가 아니라 아이템에 쓰고 있었음;
+                // 아이템 삭제
+                // 'x'를 선택
+                let removeList = document.querySelectorAll(".close");
+                // 'x'를 클릭했을 때 삭제 이벤트가 발생
+                for(let i=0;i<removeList.length;i++){
+                    removeList[i].addEventListener("click",remove);
+                }
+                function remove(){
+                    //console.log(this); // 클릭 이벤트가 일어난 대상
+                    let id = this.getAttribute("id"); // id 값 가져옴
+                    itemList.splice(id,1) // 해당 위치에서 1개 삭제
+                // 목록새로고침
+                    showList();
+                }
+            }
+        </script>        
     </body>
 </html>

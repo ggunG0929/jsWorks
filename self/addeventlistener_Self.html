@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>addEventListener() 함수</title>
+    </head>
+    <body>
+        <img src="./images/easys-1.jpg" alt="여자 아이" id="pic0">
+        <img src="./images/coffee-blue.jpg" alt="커피잔" id="pic1">
+        <img src="./images/cup-1.png" alt="컵" id="pic2">
+        <script>
+            // 여러장의 이미지를 마우스오버,아웃으로 바뀌게 하는데 코드를 줄여서 써보기
+            /*
+            let pic0 = document.querySelector("#pic0");
+            pic0.addEventListener("mouseover", function(){;
+                pic0.src="./images/easys-2.jpg";
+            });
+            pic0.addEventListener("mouseout", function(){;
+                pic0.src="./images/easys-1.jpg";
+            });
+            let pic1 = document.querySelector("#pic1");
+            pic1.addEventListener("mouseover", function(){;
+                pic1.src="./images/coffee-pink.jpg";
+            });
+            pic1.addEventListener("mouseout", function(){;
+                pic1.src="./images/coffee-blue.jpg";
+            });
+            let pic2 = document.querySelector("#pic2");
+            pic2.addEventListener("mouseover", function(){;
+                pic2.src="./images/cup-2.png";
+            });
+            pic2.addEventListener("mouseout", function(){;
+                pic2.src="./images/cup-1.png";
+            });
+            */
+            function changePic(id,picHoverSrc,picSrc){
+                let pic = document.querySelector(id);
+                pic.addEventListener("mouseover",function(){
+                    pic.src=picHoverSrc;
+                });
+                pic.addEventListener("mouseout",function(){
+                    pic.src=picSrc;
+                })
+            }
+            changePic("#pic0","./images/easys-2.jpg","./images/easys-1.jpg");
+            changePic("#pic1","./images/coffee-pink.jpg","./images/coffee-blue.jpg");
+            changePic("#pic2","./images/cup-2.png","./images/cup-1.png");
+        </script>
+    </body>
+</html>

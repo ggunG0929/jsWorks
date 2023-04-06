@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>이미지 숨기기/보이기 이벤트 효과</title>
+        <style>
+            *{box-sizing: border-box;}
+            #item{
+                width: 420px;
+                margin: 0 auto;
+            }
+            #item #total{
+                width: 200px;
+                border: 1px solid #ccc;
+                margin: auto; 
+                padding: 20px;
+                text-align: center;
+                cursor: pointer;
+            }
+            #up{
+                width: 400px;
+                position: relative;
+                margin-top: 20px;
+            }
+            /* 임의로 사진모서리와 버튼모서리 둥글게 */
+            #pic{
+                border-radius: 20px;
+            }
+            #show{
+                position: absolute;
+                left: 10px;
+                bottom: 10px;
+            }
+            #down{
+                width: 400px;
+                display: none;
+                position: relative;
+            }
+            /* 임의로 닫기 버튼 위치 변경 */
+            #hide{
+                position: absolute;
+                right: 10px
+            }
+            /* 임의로 버튼 커서모양 변경 */
+            button{
+                background-color: rgba(238, 229, 229, 0.5);
+                border-radius: 10px;
+                padding: 5px;
+                cursor: pointer;
+            }
+            p{
+                line-height: 1.5;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="item">
+            <div id="total" onclick="toggle()">사진 숨기기</div>
+            <div id="up">
+                <img src="./images/flower1.jpg" alt="민들레꽃" id="pic">
+                <button id="show" onclick="showText()">상세 설명 보기</button>
+            </div>
+            <div id="down">
+                <h4>민들레</h4>
+                <p>어디서나 매우 흔하게 보이는 잡초로써 바닥에 딱 붙어서 꽃봉오리 하나가 쑥 올라온다. 톱니 모양의 잎새와 눈에 확 띄는 노란 꽃이 인상적이다. 특히 꽃이 지고 나면 솜털모양의 깃을 가진 씨앗들이 나오는데 바람을 타고 날아가서 널리 퍼진다.</p>
+                <button id="hide" onclick="hideText()">상세 설명 닫기</button>
+            </div>
+        </div>
+        <script>
+            function showText(){
+                document.getElementById("down").style.display = "block";
+                document.getElementById("show").style.display = "none";
+            }
+            function hideText(){
+                document.getElementById("down").style.display = "none";
+                document.getElementById("show").style.display = "block";
+            }
+            let i=1
+            function toggle(){
+                if(i===1){
+                    document.getElementById("up").style.display = "none";
+                    document.getElementById("total").innerHTML = "사진 보이기";
+                    i = 0;
+                }else{
+                    document.getElementById("up").style.display = "block";
+                    document.getElementById("total").innerHTML = "사진 숨기기";
+                    i = 1;
+                }
+            }
+        </script>
+    </body>
+</html>

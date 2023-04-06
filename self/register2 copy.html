@@ -5,21 +5,59 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>회원가입-유효성 검사</title>
-        <link rel="stylesheet" href="./css/register copy.css">
+        <style>
+            #container{
+            width: 460px;
+            margin: 30px auto;
+            }
+            h2{
+                text-align: center;
+            }
+            form{
+                border: 1px solid #ccc;
+                padding: 10px 0;
+            }
+            ul li{
+                list-style: none;
+                margin: 20px;
+            }
+            .field{
+                width: 110px;
+                float: left;
+                line-height: 2em;
+                text-align: right;
+                padding-right: 20px;
+            }
+            input[type="text"],[type="email"],[type="password"]{
+                width: 220px;
+                height: 30px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            input[type="radio"]{
+                margin-top: 10px;
+            }
+            .button{
+                border: 1px solid #ccc;
+                border-radius: 2px;
+                padding: 10px;
+                margin: 5px 10px 5px 60px;
+            }
+        </style>
     </head>
     <body>
         <div id="container">
             <h2>회원 가입</h2>
             <form action="processjoin.jsp" method="post" name="regForm">
                 <ul>
-                    <li>
+                    <!-- <li>
                         <label for="user-id" class="field">아이디</label>
                         <input type="text" id="user-id" name="uid" required placeholder="4~12자리의 영문과 숫자로 입력">
                     </li>
                     <li>
                         <label for="email" class="field">이메일</label>
                         <input type="email" id="email" name="email" required>
-                    </li>
+                    </li> -->
                     <li>
                         <label for="user-pw1" class="field">비밀번호</label>
                         <input type="text" id="user-pw1" name="upw1" required placeholder="8자리 이상">
@@ -28,11 +66,11 @@
                         <label for="user-pw2" class="field">비밀번호 확인</label>
                         <input type="text" id="user-pw2" name="upw2" required>
                     </li>
-                    <li>
+                    <!-- <li>
                         <label class="field">메일링 수신</label>
                         <label><input type="radio" value="yes" name="mailling">예</label>
                         <label><input type="radio" value="no" name="mailling">아니오</label>
-                    </li>
+                    </li> -->
                     <li>
                         <input type="button" value="가입하기" class="button" onclick="checkMember()">
                         <input type="reset" value="취소하기" class="button">
@@ -40,6 +78,47 @@
                 </ul>
             </form>
         </div>
-        <script src="./js/register2 copy.js"></script>
+        <script>
+            // 정규표현식 익히기
+            function checkMember(){
+                let form = document.regForm;
+                /*
+                let id = form.uid;
+                let mail = form.email;
+                */
+                let pw1 = form.upw1;
+                let pw2 = form.upw2;
+
+                let pw_pat1 = /[0-9]/; // /\d/와 동일함. 숫자
+                let pw_pat2 = /[~!@#$%^&*]/; // /[\~\!\@\#\$\%\^\&\*]/과 동일함. 특수문자
+                let pw_pat3 = /[a-zA-Z]/;
+
+                console.log(pw_pat1.test(pw1.value))
+                // console.log(pw_pat2.test(pw1.value))
+                // console.log(pw_pat3.test(pw1.value))
+                /*
+                if(id.value.length<4||id.value.length>12){
+                    alert("아이디를 4~12자리로 입력해 주세요")
+                    id.select();
+                    return false; // 전송 x
+                }else if(mail.value == ""){
+                    alert("이메일은 필수 입력 사항입니다")
+                    mail.select();
+                    return false;
+                }else */
+                if(pw1.value.length<8 || !pw_pat1.test(pw1.value)/* || !pw_pat2.test(pw1.value) || !pw_pat3.test(pw1.value)*/){
+                    alert("비밀번호는 영문자, 숫자, 특수문자 포함 8자리 이상입니다")
+                    pw1.select();
+                    return false;
+                }else if(pw1.value!==pw2.value){
+                    alert("비밀번호는 동일해야 합니다")
+                    pw2.select();
+                    return false;
+                }else{
+                    // form.submit();
+                    return false;
+                }
+            }
+        </script>
     </body>
 </html>
