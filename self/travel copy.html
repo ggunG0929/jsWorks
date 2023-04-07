@@ -66,11 +66,12 @@
         <script>
             // 아이템 리스트
             let itemList = []
+            // 엔터키가 돌아가는지 확인하기 위해서 폼 작성을 멈춰주는 함수를 어드이벤트로 만들 수 있음 폼을 선택하고 e를 눌렀을때 preventDefault였나 그거로 하면된다구함
             /*
             // 엔터키를 눌렀을때 동시이벤트
             let input = document.querySelector('#item');
             input.addEventListener('keyup',function(e){ //keyup: 키를 눌렀을때
-                if (e.keyCode === 13) { // 키코드13인 엔터키 와 일치했을때 ; 요즘에는 코드해서 "Enter"
+                if (e.keyCode === 13) { // 키코드13인 엔터키 와 일치했을때 ; 요즘에는 코드해서 "Enter" 그리고 keyup도 keypress로 넣어주어야 조작이 쉬워짐
                 addList();
                 return false; //안됨
             }
