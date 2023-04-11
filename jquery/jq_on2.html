@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>jQuery - click()함수2</title>
+        <script src="./js/jquery-3.6.4.js"></script>
+        <style>
+            div{
+                width: 950px;
+                height: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 임의로 버튼위치 변경 -->
+        <button class="btn">숨김</button>
+        <div>
+            <h2 id="text">나를 클릭하면, 내가 사라질 것이다.</h2>
+        </div>
+        <script>
+            $(document).ready(function(){
+                let sw = true; // 상태 변수(전역 변수)
+                $(".btn").on('click', function(){
+                    if(sw){
+                        // text(문자열)
+                        $("#text").hide();
+                        $(this).text("보임");
+                        sw=false;
+                    }else{
+                        $("#text").show();
+                        $(this).text("숨김");
+                        sw=true;
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

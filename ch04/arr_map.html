@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +17,8 @@
             console.log(arr);
 
             // map() - 배열 내의 요소 각각에 대해 정의한 함수를 호출한 결과 새로운 배열을 반환한다.
-            let arr2 = numbers.map(myNumber);                     
-            function myNumber(num){
+            let arr2 = numbers.map(myNumber); // 함수 () 생략                    
+            function myNumber(num){ // num = 4, 9, 16, 25
                 return num*10;
             }
             document.getElementById("demo").innerHTML = arr2;

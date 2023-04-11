@@ -7,12 +7,17 @@
         <title>clearInterval()함수</title>
     </head>
     <body>
-        <h2>디지털 시계</h2>
+        <h2>스톱워치</h2>
         <p id="display"></p>
-        <button onclick="myStop()">중지</button>
+        <button onclick="myStart()">시작</button>
+        <button onclick="myStop()">일시정지</button>
+        <button onclick="reStart()">재개</button>
+        <button onclick="allStop()">초기화</button>
         <script>
             // 초시계로 바꿔서
             // 시작, 일시정지, 재개, 초기화
+            
+            /*
             // window() 객체 - 브라우저 실행되면 작동
             let timer = setInterval(setWatch,1000);
             function setWatch(){
@@ -22,6 +27,33 @@
             }
             function myStop(){
                 clearInterval(timer); // 시계 작동 중지
+            }
+            */
+            /* 
+            //dday예제에서 가져옴
+            let today = new Date();
+            let theDay = new Date("2023-1-1")
+            // 지나온 날 = 오늘 - 1월 1일
+            let passedTime = today.getTime() - theDay.getTime();
+            console.log(passedTime + "ms"); // 밀리초 단위
+            passedTime = Math.round(passedTime/(24*60*60*1000)); // 일로 환산
+            document.getElementById("day").innerHTML = passedTime; // 위치에 출력
+            */
+            // 시작버튼을 누르면 현재시간1을 가져옴 - 셋인터벌로 현재시간2를 실시간으로 반영하고 2-1을 출력, 천을 곱해줘서 초단위로
+            //  일시정지를 누르면 셋인터벌 중지-재개를 누르면 현재시간1을 다시-초기화는 현재시간1과 2 모두 다시
+            function myStart(){
+                let timer = setInterval(setWatch,1000);
+            }
+            function myStop(){
+                clearInterval(timer);
+            }
+            function reStart(){}
+            function allStop(){
+                clearInterval(timer);
+            }
+            function setWatch(){
+                const date = new Date();
+                let now = date.toLocaleTimeString();
             }
         </script>
     </body>
