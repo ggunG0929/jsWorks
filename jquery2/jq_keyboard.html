@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>키보드 이벤트</title>
+        <script src="./js/jquery-3.6.4.js"></script>
+        <style>
+            body{font-size: 0.8em;}
+            textarea{
+                width: 300px;
+                height: 100px;
+                border: 1px solid #000;
+            }
+            textarea.on{
+                background: #f60;
+                color: #fff;
+            }
+            #display{
+                width: 300px;
+                height: 100px;
+                border: 1px solid #000;
+                overflow: auto; /* 내용이 많아지면 스크롤 생성 */ /* 영어 알파벳 하나만 눌러버리면 자동 줄바꿈이 되지않아서 가로스크롤이 생김 하지만 한글이나 영어단어를 넣으면 세로 스크롤이 생김 */
+                /* 임의로 삽입 영어 알파벳만 쳐도 세로 스크롤이 생김 */
+                word-wrap: break-word;
+            }
+        </style>
+    </head>
+    <body>
+        <textarea></textarea>
+        <div id="display"></div>
+        <script>
+            $(function(){
+                $('textarea').keydown(function(){
+                    $(this).addClass("on");
+                }).keyup(function(){
+                    let result = $(this).val(); // textarea에 입력된 값(내용)
+                    $('#display').text(result);
+                });
+            });
+        </script>
+    </body>
+</html>
