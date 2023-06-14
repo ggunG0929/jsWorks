@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>행운의 추첨(Good Luck)</title>
+        <style>
+            h1{
+                width: 200px;
+                border: 1px solid #ccc;
+                background-color: #eee;
+                text-align: center;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <h1>행운의 추첨</h1>
+            <button type="button" onclick="play()">추첨</button>
+            <p id="display"></p>
+        </section>
+        <script>
+            function play() {
+                // 선생님은 숫자로 연산 후 출력시에만 document.write(name[people[i]])로 변환
+                let name = ["성호","은효","민정","지혜","승우","가은","은별","세현","기은","유진","의석","경철","화룡","재훈","영준","현우","정현","성길","주훈","진성"];
+                let numbers = new Array(5);  // 랜덤 번호 5개를 저장할 배열 선언
+
+                for(let i=0;i<numbers.length;i++){
+                    let lotto = Math.floor(Math.random()*(name.length));
+                    numbers[i] = lotto;
+                    // numbers[i] = name[lotto]; // 선생님과의 차이
+                    // console.log(numbers[i]);
+                    for(let j=0;j<i;j++){   // 중복제거
+                        if(numbers[j]===numbers[i]){
+                            // console.log("중복당첨: "+numbers[j])
+                            i--;    // 중복된 인덱스 삭제
+                        }
+                    }
+                }
+
+                // document.getElementById("display").innerHTML = numbers;
+
+                let winners = new Array(5);     // 당첨자 이름을 저장할 배열 선언
+                for(let i=0; i<winners.length; i++) {
+                    winners[i] = name[numbers[i]];
+                }
+                document.getElementById("display").innerHTML = winners;
+            }
+        </script>
+    </body>
+</html>
